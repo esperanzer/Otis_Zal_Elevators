@@ -1,0 +1,25 @@
+{% extends 'projects/base.html' %}
+
+<!-- once you put block body belo instead of block content it dsplays d list of expenses in d interface browser, try it -->
+{% block body %}
+
+	<h3> Installation List</h3>
+		<ul>
+			{% for installation in installations %}
+				<li>
+					<!-- this absolute_url get detels from d models,wev dfined there -->
+				<h2>
+					<a href="{{ installation.get_absolute_url }}">
+					{{ installation.installation_name }}
+					</a>
+				</h2>
+
+				</li>
+
+			{% endfor %}
+		</ul>
+
+	{% endblock %}
+
+
+	

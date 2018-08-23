@@ -1,0 +1,50 @@
+{% extends 'projects/base.html' %}
+
+<!-- once you put block body belo instead of block content it dsplays d list of expenses in d interface browser, try it -->
+{% block content %}
+
+	<h3> Expense List</h3>
+		<ul>
+			{% for expense in object_list %}
+				<li>
+					<!-- this absolute_url get detels from d models,wev dfined there -->
+				<h2>
+					<a href="{{ expense.get_absolute_url }}">
+					{{ expense.expense_name }}
+					</a>
+				</h2>
+
+				</li>
+
+			{% endfor %}
+		</ul>
+
+		<h3> Repair List</h3>
+		<ul>
+			{% for repair in object_list %}
+				<li>
+					<!-- this absolute_url get detels from d models,wev dfined there -->
+					<a href="{{ repair.get_absolute_url }}">
+					{{ repair.repair_name }}
+					</a>
+				</li>
+
+			{% endfor %}
+		</ul>
+
+		<h3> Installation List</h3>
+		<ul>
+			{% for installation in object_list %}
+				<li>
+					<!-- this absolute_url get detels from d models,wev dfined there -->
+					<a href="{{ installation.get_absolute_url }}">
+					{{ installation.installation_name }}
+					</a>
+				</li>
+
+			{% endfor %}
+
+	{% endblock %}
+
+
+	

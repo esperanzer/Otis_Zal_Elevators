@@ -1,0 +1,69 @@
+{% extends 'projects/base.html' %}
+{% block title %}All Repairs{% endblock %}
+{% block repairs_active %}active{% endblock %}
+
+<!-- once you put block body belo instead of block content it dsplays d list of expenses in d interface browser, try it -->
+{% block body %}
+
+
+
+<div class="container-fluid left-side repairs-container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" {% if filter_by == 'all' %}class="active"{% endif %}><a href="{% url 'projects:repairs' 'all' %}">View All</a></li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Repair Name</th>
+                                <th>Company Name</th>
+                                <th>Cost</th>
+                                <th>Timestamp</th>
+                            </tr>
+                        </thead>
+		<h3> Repair List</h3>
+		<ul>
+			{% for repair in repairs %}
+				<li>
+                        <tbody>
+						
+					<tr>
+                                    <td>{{ repair.repair_name }}</td>
+                                    <td>{{ repair.company }}</td>
+                                    <td>{{ repair.cost }}</td>
+                                    <td>{{ repair.timestamp }}</td>
+                                    
+                                    <td>
+                                      
+                                        <a href="{% url 'projects:repair_detail' repair.expense.id %}">{{ repair.repair_name }}</a>
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+					
+	

@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details</title>
+</head>
+<body>
+	{% block body %}
+		<ul>
+			<li><h1>{{ installation.installation_name }}</h1></li>
+			<li><h2>Company: {{ installation.company }}</h2></li>
+			<li><h3>Timestamp: {{ installation.timestamp }}</h3></li>
+			<li><h3>Cost: {{ installation.cost }}</h3></li>
+		</ul>	
+	{% endblock body %}
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details</title>
+</head>
+<body>
+	{% block body %}
+		<ul>
+			<li><h1>{{ expense.expense_name }}</h1></li>
+			<li><h3>Charges: {{ expense.charges }}</h3></li>
+			<li><h2>Customer: {{ expense.customer }}</h2></li>
+			<li><h3>Timestamp : {{ expense.timestamp }}</h3></li>
+		</ul>	
+	{% endblock body %}
+</body>
+</html>
+
+
+
+
